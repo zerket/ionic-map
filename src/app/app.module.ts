@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -20,7 +21,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     environment.production ?
       [] :
-      [AkitaNgDevtools.forRoot(), AkitaNgRouterStoreModule.forRoot()]
+      [AkitaNgDevtools.forRoot(), AkitaNgRouterStoreModule.forRoot()],
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,
