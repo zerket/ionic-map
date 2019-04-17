@@ -11,12 +11,24 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TodosFiltersComponent } from './filters/filters.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TodosComponent } from './todos/todos.component';
+import { TodoComponent } from './todos/todo.component';
+import { TodosPageComponent } from './todos/todos-page/todos-page.compenent';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    TodosFiltersComponent,
+    TodosComponent,
+    TodoComponent,
+    TodosPageComponent,
+    AppComponent
+  ],
   entryComponents: [],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     environment.production ?
